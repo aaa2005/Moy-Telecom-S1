@@ -174,7 +174,9 @@
                     
                 </div>
                     <hr>
-                    <br><br><br><br><br><br><br><br>
+                    <br><br><br><br>
+                    <h1 id="alert" style="text-align: center; background-color: black;"></h1>
+                    <br><br><br><br>
                     <dir class="block">
                         <img src="zariata.jpg" alt="سيدي الرئيس">
                         <p style="text-align: center;">تحت إشراف الرئيس زرياطة يحيى
@@ -534,9 +536,15 @@
                         var num = document.getElementById("num").textContent;
                         document.getElementById("f").textContent = (sum/num).toFixed(2) || "00";
                         if ((sum/num)<10) {
+                            var fail = "زير روحك في السداسي الثاني";
+                            document.getElementById("alert").textContent = fail;
                             document.getElementById("f").style.color = "red";
+                            document.getElementById("alert").style.color = "red";
                         } else {
+                            var sec = "مبروك عليك الرئيس يحيى يرسل تحياته";
+                            document.getElementById("alert").textContent = sec;
                             document.getElementById("f").style.color = "greenyellow"
+                            document.getElementById("alert").style.color = "greenyellow";
                         }
                     }
 
