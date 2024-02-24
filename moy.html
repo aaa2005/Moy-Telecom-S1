@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>Telecom Grade S1</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <style>
+            table label{
+                background-color: black;
+                color: white;
+            }
+            input{
+                background-color: rgb(51, 49, 49);
+                color: white;
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+            }
+            .bigger{
+                font-size: 30px;
+                width: 140px;
+                padding-top: 3px;
+                
+                border-color: black;
+                justify-content: center;
+                border-top: solid;
+                background: linear-gradient(to bottom left, #3200a7, #3d0757);
+                color: white;
+            }
+            .block {
+                display: flex;
+                justify-content: center;
+                align-items: center; /* Vertically center the content */
+                margin-bottom: 20px; /* Add some space between blocks */
+            }
+            .block img {
+                width: 100px;
+                height: 100px; /* Adjust image width as needed */
+                margin-left: 0px; /* Add some space between image and text */
+            }
+            .block p {
+                margin: 0; /* Remove default paragraph margin */
+            }
+            body{
+                color: white;
+                background:  linear-gradient(to bottom left, #290000, #3f23df);
+            }
+            button {
+                font-size: 30px;
+                width: 140px;
+                border-color: rgb(10, 74, 252);
+                border-top: solid;
+                
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                background: linear-gradient(to bottom left, #3200a7, #3d0757);
+                color: rgb(10, 74, 252);
+            }
+
+        </style>
+
+        <body>
+            <header style="text-align: center; background-color: blue; color: aliceblue; padding: 10px; margin: 10px; border-color: darkblue; border-radius: 10px;">
+                <h1>موقع حساب معدل السداسي الأول</h1>
+            </header>
+            <table style="width: 100%; text-align: center;background-color: black;color: white;">
+                <tr>
+                    <th>module</th>
+                    <th>exam</th>
+                    <th>TD</th>
+                    <th>TP</th>
+                    <th>Average Module Grade</th>
+                    <th>coefficient</th>
+                    <th>Total Points</th>
+
+                </tr>
+                <tr>
+                    <th><label for="math">Mathematics</label></th>
+                    <td><input type="text" id="math_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="math_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="math_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="math_g" id="math_g">00</label></th>
+                    <th>3</th>
+                    <th><label for="math_t" id="math_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="physics">Physics</label></th>
+                    <td><input type="text" id="physics_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="physics_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="physics_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="phy_g" id="phy_g">00</label></th>
+                    <th>3</th>
+                    <th><label for="phy_t" id="phy_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="chemistry">Chemistry</label></th>
+                    <td><input type="text" id="chemistry_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="chemistry_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="chemistry_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="chemi_g" id="chemi_g">00</label></th>
+                    <th>3</th>
+                    <th><label for="chemi_t" id="chemi_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="cs">Computer Science</label></th>
+                    <td><input type="text" id="cs_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="cs_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="cs_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <th><label for="cs_g" id="cs_g">00</label></th>
+                    <th>2</th>
+                    <th><label for="cs_t" id="cs_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="methodology">Methodology</label></th>
+                    <td><input type="text" id="method_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="method_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="method_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="method_g" id="method_g">00</label></th>
+                    <th>1</th>
+                    <th><label for="method_t" id="method_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="c-st">ST</label></th>
+                    <td><input type="text" id="st_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="st_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="st_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="st_g" id="st_g">00</label></th>
+                    <th>1</th>
+                    <th><label for="st_t" id="st_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="ethics">Ethics</label></th>
+                    <td><input type="text" id="ethics_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="ethics_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="ethics_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="ethics_g" id="ethics_g">00</label></th>
+                    <th>1</th>
+                    <th><label for="ethics_t" id="ethics_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="english">English</label></th>
+                    <td><input type="text" id="english_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <td><input type="text" id="english_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="english_TP" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <th><label for="en_g" id="en_g">00</label></th>
+                    <th>1</th>
+                    <td><label for="en_t" id="en_t">00</label></td>
+                </tr>
+                <tr>
+                    <th><label for="tp_phy">TP Physics</label></th>
+                    <td><input type="text" id="tp_phy_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="tp_phy_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="tp_phy" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                
+                    <th><label for="tp_phy_g" id="tp_phy_g">00</label></th>
+                    <th>1</th>
+                    <th><label for="tp_phy_t" id="tp_phy_t">00</label></th>
+                </tr>
+                <tr>
+                    <th><label for="tp_chemistry">TP Chemistry</label></th>
+                    <td><input type="text" id="tp_chemi_Exam" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="tp_chemi_TD" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%; display: none;"></td>
+                    <td><input type="text" id="tp_chemi" value="" pattern="[0-9.]+" title="only numbers" minlength="1" maxlength="5" style="width: 90%;"></td>
+                    <th><label for="tp_chemi_g" id="tp_chemi_g">00</label></th>
+                    <th>1</th>
+                    <th><label for="tp_chemi_t" id="tp_chemi_t">00</label></th>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th><label for="total">Totals</label></th>
+                    <th><label for="num" id="num">17</label></th>
+                    <th><label for="sum" id="sum">00</label></th>
+                </tr>
+                <!--<tr>
+                    <td></td>
+                    <td></td>
+                    <td><button onclick="calc()">hi</button></td>
+                    <td><label for="gg" id="gg">gg</label></td>
+                </tr>-->
+            </table>
+            
+                    <br>
+                    <hr>
+                <div class="container">
+                    
+                    <dir class="" style="margin-left: -38px;margin-right: 5px; border-top-left-radius: 10px;"><button onclick="moyenN()" style="text-align: left;font-size: 30px; border-bottom-left-radius: 10px;padding-left: 32px;padding-top: 3px;padding-bottom: 0px; padding-right: 35px; justify-self: center;">حساب</button></dir>
+                    <dir class="bigger" style="border-top-left-radius: 10px;border-bottom-left-radius:10px ;"><label for="f" id="f" >00.00</label></dir>
+                    <dir class="bigger" ><label for="moyen" id="moyen" >:المعدل</label></dir>
+                    
+                </div>
+                    <hr>
+                    <br><br>
+                    <h1 id="alert" style="text-align: center; background-color: black;"></h1>
+                    <br><br>
+                    
+                    <dir class="block">
+                        <img src="zariata.jpg" alt="سيدي الرئيس"style="margin-left: -17px; border-style: double;">
+                        <p style="text-align: center; margin: 10px;"><b>تحت إشراف الرئيس زرياطة يحيى
+                             وبدعم مقيمي إقامة العقون صالح
+                              تخصص إتصالات سلكية ولاسلكية
+                            </b></p>
+                        <img src="zinight.png" alt="ZiNight" style="margin-right: 20px; border-style: double;">
+                    </dir>
+                    <br>
+                    <footer style="text-align: center; background-color: blue; color: aliceblue; padding: 10px; margin-left: -10px; border-color: darkblue; position: fixed; bottom: 0; width: 100%;">
+                        &copy; 2024 ZiNight Company. All rights reserved .
+                    </footer>
+                    
+
+            
+                <script>
+                    
+                        //Exam
+                        var math= { 
+                            name: "math",
+                            exam: "math_Exam",
+                            td: "math_TD",
+                            tp: "math_TP",
+                            average: "math_g",
+                            total: "math_t",
+                            coafficiont: 3,
+                        }
+                        var physics = {
+                            name: "physics",
+                            exam: "physics_Exam",
+                            td: "physics_TD",
+                            tp: "physics_TP",
+                            average: "phy_g",
+                            total: "phy_t",
+                            average_tp: "tp_phy_g",
+                            total_tp: "tp_phy_t",
+                            coafficiont: 3,
+                        }
+                        var chemistry = {
+                            name: "chemistry",
+                            exam: "chemistry_Exam",
+                            td: "chemistry_TD",
+                            tp: "chemistry_TP",
+                            average: "chemi_g",
+                            total: "chemi_t",
+                            average_tp: "tp_chemi_g",
+                            total_tp: "tp_chemi_t",
+                            coafficiont: 3,
+                        }
+                        var cs = {
+                            name: "cs",
+                            exam: "cs_Exam",
+                            td: "cs_TD",
+                            tp: "cs_TP",
+                            average: "cs_g",
+                            total: "cs_t",
+                            coafficiont: 2,
+                        }
+                        var method = {
+                            name: "method",
+                            exam: "method_Exam",
+                            td: "method_TD",
+                            tp: "method_TP",
+                            average: "method_g",
+                            total: "method_t",
+                            coafficiont: 1,
+                        }
+                        var st = {
+                            name: "st",
+                            exam: "st_Exam",
+                            td: "st_TD",
+                            tp: "st_TP",
+                            average: "st_g",
+                            total: "st_t",
+                            coafficiont: 1,
+                        }
+                        var ethics = {
+                            name: "ethics",
+                            exam: "ethics_Exam",
+                            td: "ethics_TD",
+                            tp: "ethics_TP",
+                            average: "ethics_g",
+                            total: "ethics_t",
+                            coafficiont: 1,
+                        }
+                        var english = {
+                            name: "english",
+                            exam: "english_Exam",
+                            td: "english_TD",
+                            tp: "english_TP",
+                            average: "en_g",
+                            total: "en_t",
+                            coafficiont: 1,
+                        }
+                        var tp_phy = {
+                            name: "TP Physics",
+                            exam: "tp_phy_Exam",
+                            td: "tp_phy_TD",
+                            tp: "tp_phy",
+                            average: "tp_phy_g",
+                            total: "tp_phy_t",
+                            coafficiont: 1,
+                        }
+                        var tp_chemi = {
+                            name: "TP Chemistry",
+                            exam: "tp_chemi_Exam",
+                            td: "tp_chemi_TD",
+                            tp: "tp_chemi",
+                            average: "tp_chemi_g",
+                            total: "tp_chemi_t",
+                            coafficiont: 1,
+                        }
+                    
+                    function loadVars() {
+                        var sum = 0;
+                        var subjects =[math,physics,chemistry,cs,method,st,ethics,english,tp_phy,tp_chemi];
+
+                        subjects.forEach(function(subject){
+                            /*
+                            var examElement= document.getElementById(subject.exam);
+                            var tdElement= document.getElementById(subject.td);
+                            var tpElement = document.getElementById(subject.tp);
+                            var AverageElement = document.getElementById(subject.average);
+                            var TotalElement = document.getElementById(subject.total);
+
+                            if (examElement){
+                                subject.exam = parseFloat(examElement.value) ;//|| 0;
+                            }
+                            if (tdElement) {
+                                subject.td = parseFloat(tdElement.value) ;//|| 0;
+                            }
+                            if (tpElement) {
+                                subject.tp = parseFloat(tpElement.value) ;//|| 0;
+                            }
+                            if (AverageElement) {
+                                subject.average = parseFloat(AverageElement.value) ;//|| 0;
+                            }
+                            if (tpElement) {
+                                subject.total = parseFloat(TotalElement.value) ;//|| 0;
+                            }
+                            subject.coafficiont = parseFloat(subject.coafficiont) || 0;
+                            
+                            english.exam = 10
+                            console.log(subject.name);
+                            console.log(subject.exam);
+                            console.log(subject.td);
+                            console.log(subject.tp);
+                            console.log(subject.coafficiont);
+                            console.log(subject.total);
+                            console.log(subject.average);
+
+                            var average = (subject.exam*0.6)+(subject.tp*0.4) ;//|| "00";
+                            var total = (average*subject.coafficiont) ;//|| "00";
+                            document.getElementById(subject.average).textContent = average ;//|| "00";
+                            document.getElementById(subject.total).textContent = total ;//|| "00";
+                            console.log(average);
+                            console.log(total);*/
+                            /////////////////////////////////////////////////
+                            var examElement= document.getElementById(subject.exam) || "0";
+                            var tdElement= document.getElementById(subject.td) || "0";
+                            var tpElement = document.getElementById(subject.tp) || "0";
+                            var MyAverageElement = document.getElementById(subject.average).textContent;
+                            var MyTotalElement = document.getElementById(subject.total).textContent;
+                            //console.log(MyAverageElement);
+                            //console.log(MyTotalElement);
+
+                            if (examElement){
+                                subject.e = parseFloat(examElement.value) ;//|| parseFloat(examElement);//|| "0";
+                            }
+                            if (tdElement) {
+                                subject.d = parseFloat(tdElement.value) ;//|| parseFloat(tdElement);//|| "0";
+                            }
+                            if (tpElement) {
+                                subject.p = parseFloat(tpElement.value) ;//|| parseFloat(tpElement);//|| "0";
+                            }
+                            if (MyAverageElement) {
+                                subject.a = parseFloat(MyAverageElement) ;//|| parseFloat(MyAverageElement);//|| "0";
+                            }
+                            if (MyTotalElement) {
+                                subject.t = parseFloat(MyTotalElement) ;//|| parseFloat(MyTotalElement);//|| "0";
+                            }
+                            subject.coafficiont = parseFloat(subject.coafficiont) ;//|| "0";
+
+                            function getIndexByValue(array, value) {
+                                return array.indexOf(value);
+                            }
+
+                            
+                            
+                            
+                            
+                        
+                            var average = (subject.a) = ((subject.e*0.6)+(subject.d*0.4)) || ((subject.e*0.6)+(subject.p*0.4)) || (subject.e) || (subject.p) ||"0";
+                            var total = (subject.a*subject.coafficiont) || "0";
+                            sum+=parseFloat(total);
+                            //var average_toFixed = average
+                            document.getElementById(subject.average).textContent = (parseFloat(average)).toFixed(2) || "0";
+                            document.getElementById(subject.total).textContent = (parseFloat(total)).toFixed(2) || "0";
+                            document.getElementById("sum").textContent = (parseFloat(sum)).toFixed(2) || "0";
+                            
+                            subject.e = Number(subject.e || 0);
+                            subject.d = Number(subject.d || 0);
+                            subject.p = Number(subject.p || 0);
+                            subject.a = Number(subject.a || 0);
+                            subject.t = Number(subject.t || 0);
+
+                            var nums = [subject.e,subject.d,subject.p,subject.a,subject.t]
+                            var names = [subject.exam,subject.td,subject.tp,subject.average,subject.total]
+                            var coef = []
+                            for(let i = 0; i <(nums.length-1);i++){
+                                    var numer = nums[i];
+                                    var name = names[i];
+                                    /*
+                                    if (i==4 && numer[4]<(10*subject.coafficiont)) {
+                                        document.getElementById(name).style.color = "red";
+                                    }else if(i==4 && numer[4]>=(10*subject.coafficiont)){
+                                        document.getElementById(name).style.color = "greenyellow";
+                                    }*/
+                                    if (numer<10) {
+                                        document.getElementById(name).style.color = "red";
+                                    } else {
+                                        document.getElementById(name).style.color = "greenyellow";
+                                    }
+                                    /*var Index = getIndexByValue(nums, n);
+                                    var name = names[Index];
+                                    if (name) {
+                                        document.getElementById(name).style.color = "red";
+                                    
+                                    } else {
+                                        //document.getElementById(names[Index]).style.color = "green" || 0;
+                                    }*/
+                            }
+                            /*
+                            console.log(average);
+
+                            console.log(subject.name);
+                            console.log(subject.exam);
+                            console.log(subject.td);
+                            console.log(subject.tp);
+                            console.log(subject.coafficiont);
+                            console.log(document.getElementById(subject.total).textContent);
+                            console.log(document.getElementById(subject.average).textContent);
+                            console.log(subject.e);
+                            console.log(subject.d);
+                            console.log(subject.p);
+                            console.log(subject.a);
+                            console.log(subject.t);
+                            */
+                            /////////////////////////////////////////////////
+                            /*
+                            if (subject.name === "cs") {
+                                var average = (subject.exam*0.6)+(subject.tp*0.4) || "00";
+                                var total = (average*subject.coafficiont) || "00";
+                                subject.average.textContent = average || "00";
+                                subject.total.textContent = total || "00";
+                                console.log(average);
+                                console.log(total);
+                            } else if (subject.name === "physics" || subject.name === "chemistry") {
+                                var average = (subject.exam*0.6)+(subject.td*0.4) || "00";
+                                var average_total_TP = (subject.tp) || "00";
+                                var total = (average*subject.coafficiont) || "00";
+                                subject.average.textContent = average || "00";
+                                subject.total.textContent = total || "00";
+                                subject.average_tp.textContent = subject.total_tp.textContent = average_total_TP || "00";
+                                console.log(average_total_TP);
+                                console.log(average);
+                                console.log(total);
+                            } else if (subject.name === "math"){
+                                var average = (subject.exam*0.6)+(subject.td*0.4) || "00";
+                                var total = (average*subject.coafficiont) || "00";
+                                subject.average.textContent = average || "00";
+                                subject.total.textContent = total || "00";
+                                console.log(average);
+                                console.log(total);
+                            } else {
+                                var average = total = (subject.exam) || "00";
+                                subject.average.textContent = average || "00";
+                                subject.total.textContent = total || "00";
+                                console.log(average);
+                            }*/
+                        });
+                    }
+                    /*
+                    function calc() {
+                        
+                        
+                            var english = {
+                                name: "english",
+                                exam: "english_Exam",
+                                td: "",
+                                tp: "",
+                                e: 0,
+                                d: 0,
+                                p: 0,
+                                average: "en_g",
+                                total: "en_t",
+                                a: 0,
+                                t: 0,
+                                coafficiont: 1,
+                            }
+                            
+                            var math_c = math.exam +2;
+                            document.getElementById("gg").textContent = math_c;
+
+                            var examElement= document.getElementById(english.exam);
+                            var tdElement= document.getElementById(english.td);
+                            var tpElement = document.getElementById(english.tp);
+                            var MyAverageElement = document.getElementById(english.average).textContent;
+                            var MyTotalElement = document.getElementById(english.total).textContent;
+                            console.log(MyAverageElement.value);
+                            console.log(MyTotalElement.value);
+
+                            if (examElement){
+                                english.e = parseFloat(examElement.value) ;//|| 0;
+                            }
+                            if (tdElement) {
+                                english.d = parseFloat(tdElement.value) ;//|| 0;
+                            }
+                            if (tpElement) {
+                                english.p = parseFloat(tpElement.value) ;//|| 0;
+                            }
+                            if (MyAverageElement) {
+                                english.a = parseFloat(MyAverageElement) ;//|| 0;
+                            }
+                            if (MyTotalElement) {
+                                english.t = parseFloat(MyTotalElement) ;//|| 0;
+                            }
+                            english.coafficiont = parseFloat(english.coafficiont) || 0;
+                            
+                            
+                        
+                            var average = english.a = (english.e) || "111";
+                            var total = (english.a*english.coafficiont) || "111";
+                            document.getElementById(english.average).textContent = average || "111";
+                            document.getElementById(english.total).textContent = total || "111";
+                            console.log(average);
+
+                            console.log(english.name);
+                            console.log(english.exam);
+                            console.log(english.td);
+                            console.log(english.tp);
+                            console.log(english.coafficiont);
+                            console.log(document.getElementById(english.total).textContent);
+                            console.log(document.getElementById(english.average).textContent);
+                            console.log(english.a);
+                            console.log(english.d);
+                            console.log(english.p);
+                            console.log(english.a);
+                            console.log(english.t);
+                            
+                        
+                            document.getElementById("")
+                        
+                        //document.getElementById("physics_Exam").value;//.getElementById("math_Exam").value; 
+                    }*/
+
+                    function moyenN(){
+                        var sum = document.getElementById("sum").textContent;
+                        var num = document.getElementById("num").textContent;
+                        document.getElementById("f").textContent = (sum/num).toFixed(2) || "00";
+                        if ((sum/num)<10) {
+                            var fail = "زير روحك في السداسي الثاني";
+                            document.getElementById("alert").textContent = fail;
+                            var elements = document.getElementsByClassName("bigger");
+
+                            // Loop through each element and change its color
+                            for (var i = 0; i < elements.length; i++) {
+                                elements[i].style.color = "red"; // Change to the desired color
+                            }
+                            //document.getElementsByClassName("bigger").style.color = "red";
+                            document.getElementById("alert").style.color = "red";
+                        } else {
+                            var sec = "مبروك عليك الرئيس يحيى يرسل تحياته";
+                            document.getElementById("alert").textContent = sec;
+                            var elements = document.getElementsByClassName("bigger");
+
+                            // Loop through each element and change its color
+                            for (var i = 0; i < elements.length; i++) {
+                                elements[i].style.color = "greenyellow"; // Change to the desired color
+                            }
+                            document.getElementById("alert").style.color = "greenyellow";
+                        }
+                    }
+
+                    setInterval(loadVars,100)
+                    
+
+                </script>
+            
+
+        </body>
+</html>

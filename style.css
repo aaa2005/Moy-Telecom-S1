@@ -1,0 +1,69 @@
+body{
+    background:  linear-gradient(to bottom left, #290000, #3f23df);
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set height to 100% of viewport height */
+     /* Use flexbox for centering content */
+     /* Center vertically */
+}
+
+.card{
+    display: block;
+    justify-items: center;
+    border: solid;
+    border-radius: 30px;
+    margin: 100px auto;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(to bottom right, #0F4C75, #903749);
+    align-items: center;
+    text-align: center;
+}
+
+.cardlogin{
+    display: block;
+    justify-items: center;
+    border: solid;
+    border-radius: 10px;
+    border-color: black;
+    margin: -540px auto;
+    width: 150px;
+    height: 60px;
+    background: linear-gradient(to bottom left, #3200a7, #3d0757);
+}
+.cardlogin h1 {
+    text-align: center;
+    margin: 10px;
+    background: linear-gradient(to right, #ec0d0d, #db00f8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card pre{
+    text-align: left;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+.card input{
+    height: 30px;
+    width: 230px;
+}
+.card button{
+    font-size: 30px;
+    width: 140px;
+    border: solid;
+    border-radius: 10px;
+    border-color: black;
+    background: linear-gradient(to bottom left, #3200a7, #3d0757);
+    color: greenyellow;
+    /*color: transparent; /* Make text transparent */
+    /*-webkit-background-clip: text; /* Clip background to text */
+    /*background-clip: text; /* Clip background to text */
+    
+}
+
+.card button:hover {
+    background-color: transparent; /* Change background color on hover */
+}
