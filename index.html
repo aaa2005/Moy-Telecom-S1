@@ -19,7 +19,7 @@ number          الباكالوريا
                 <input style="font-size: 20px;text-align: center;" type="text" id="bac_num" minlength="8" maxlength="8" attern="[0-9]+" required>
                 <br><br>
             
-                <button type="button" onclick="goToPage()">دخول</button>
+                <button type="submit" onclick="goToPage()">دخول</button>
             </form>
         </div>
         
@@ -37,39 +37,7 @@ number          الباكالوريا
                 //var url = 'moy.html'; 
                 //window.location.href = url;
 
-                const token = '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';
-                const owner = 'aaa2005';
-                const repo = 'Moy-Telecom-S1';
-                const path = 'file.txt';
-
-                const content = btoa('Hello, World!'); // Base64 encode your content
-
-                // Construct the request body
-                const requestBody = {
-                    message: 'Update file via API',
-                    content: content,
-                };
-
-                // Make the API request
-                fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-                method: 'PUT',
-                headers: {
-                    'Authorization': `token ${token}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(requestBody),
-                })
-                .then(response => {
-                if (response.ok) {
-                    console.log('File updated successfully!');
-                } else {
-                    console.error('Failed to update file:', response.statusText);
-                }
-                })
-                .catch(error => {
-                console.error('Error:', error);
-                });
-                console.log("hi");
+                
 
             }
             
